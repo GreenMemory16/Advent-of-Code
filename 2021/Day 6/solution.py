@@ -7,7 +7,8 @@ starting_fish = [int(x) for x in f.readline().split(",")]
 for i in starting_fish:
     fishes[i] += 1
 
-
+f.close()
+    
 #####################################
 #               PART 1              #
 #####################################
