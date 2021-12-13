@@ -15,15 +15,16 @@ def IsWinner(card):
         if y.count(100) == 5:
             return True
 
-    n = True
-    for x in card:
-        n = True
-        for y in range(5):
-            if x[y] != 100:
-                n = False
-                break
+    count = 0
+    for x in range(5):
+        count = 0
+        for y in card:
+            if y[x] == 100:
+                count += 1
+        if count == 5:
+            return True
 
-    return n
+    return False
 
 
 
@@ -53,12 +54,12 @@ m = 0
 for n in range(100):
     for e in range(100):
         play(cards[e], num_calls[n])
-        if IsWinner(cards[e]):
-            winner = True
+        if IsWinner(cards[e]) and cards[e] not in winners:
+            winners.append(cards[e].copy())
             x = e
-            m = num_calls[n]
-    if winner == True:
+    if len(winners) == 1:           # TO get part 2 change this 1 to 100
+        m = num_calls[n]
         break
 
 
-print(m * unmarked_n(cards[x]))
+print("Part x : ", m * unmarked_n(cards[x]))
