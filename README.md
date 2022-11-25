@@ -3,3 +3,4 @@ Here are my solutions for [Advent of Code](https://adventofcode.com/2021/leaderb
 puzzles designed by Eric Wastl
 
 2021: Python
+2022: 
